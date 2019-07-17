@@ -1,12 +1,12 @@
-Requires at least: 4.6
-Tested up to: 5.2.2
-Requires PHP: 5.3
-
 === WS Coupon Woocommerce ===
 Contributors: xjohnyk
 Tags: woocommerce, coupon
 Donate link: paypal.me/WPKwojciechskrzek
 License: GPL v3
+Requires at least: 4.6
+Tested up to: 5.2.2
+Requires PHP: 5.3
+
 
 Small plugin to show woocommerce coupons on the single product page 
 
