@@ -59,6 +59,11 @@ if ( ! class_exists( 'WS_Coupon_Woocommerce' ) ) {
 			if( class_exists( 'WooCommerce' ) ) {
 				require_once( 'woocommerce/initWoo.php' );
 			}
+			if ( ! class_exists( 'WooCommerce' ) ) {
+				add_action( 'admin_notices', array($this, 'woocommerce_ws_coupon_missing_wc_notice'));
+				return;
+			}
+		
 		}
 
 		/**
@@ -72,6 +77,12 @@ if ( ! class_exists( 'WS_Coupon_Woocommerce' ) ) {
 			}
 
 			return self::$instance;
+		}
+
+		
+		
+		function woocommerce_ws_coupon_missing_wc_notice() {
+			echo '<div class="error"><p><strong>' . sprintf( esc_html__( 'Ws Coupon Woocommerce requires WooCommerce to be installed and active. You can download %s here.', 'woocommerce-gateway-stripe' ), '<a href="https://woocommerce.com/" target="_blank">WooCommerce</a>' ) . '</strong></p></div>';
 		}
 
 
@@ -116,3 +127,4 @@ if ( ! class_exists( 'WS_Coupon_Woocommerce' ) ) {
 }
 
 WS_Coupon_Woocommerce::instance();
+
