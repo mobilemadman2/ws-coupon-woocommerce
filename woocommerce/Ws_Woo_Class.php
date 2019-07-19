@@ -3,7 +3,7 @@
 class Ws_Coupon_Woo {
 
     public static function showPopUp() {
-        if( get_option( 'ws_show_popup' ) == 1 ) {
+        if( get_option( 'ws_show_popup' ) == 1 &&  is_product() ) {
             $coupon = new WC_Coupon( get_option( 'ws_popup_coupon' ) );
             ob_start(); ?>
                 <div class="ws_single_product-popup ws-slide-in">
